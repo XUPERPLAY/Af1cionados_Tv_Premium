@@ -2,7 +2,6 @@
 <html lang="es">
 <head>
     <meta charset="utf-8">
-    <meta name="referrer" content="no-referrer">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Af1cionados TV Premium</title>
     <style>
@@ -50,11 +49,11 @@
     </div>
 
     <div class="search-container">
-        <input type="text" id="search-input" placeholder="Buscar canales..." onkeyup="filterChannels()">
+        <input type="text" placeholder="Buscar canales..." onkeyup="filterChannels()">
     </div>
 
     <div class="channels-list">
-        <!-- 100 CANALES COMPLETOS (del 1 al 100) -->
+
         <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">TNT Sports 1 UK -1</div><button class="btn-canal-action" onclick="changeChannel('1')">VER CANAL</button></div>
         <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">TNT Sports 1 UK -2</div><button class="btn-canal-action" onclick="changeChannel('2')">VER CANAL</button></div>
         <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">TNT Sports 1 UK -3</div><button class="btn-canal-action" onclick="changeChannel('3')">VER CANAL</button></div>
@@ -65,8 +64,9 @@
         <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">TNT Sports 1 UK -8</div><button class="btn-canal-action" onclick="changeChannel('8')">VER CANAL</button></div>
         <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">TNT Sports 1 UK -9</div><button class="btn-canal-action" onclick="changeChannel('9')">VER CANAL</button></div>
         <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">TNT Sports 1 UK -10</div><button class="btn-canal-action" onclick="changeChannel('10')">VER CANAL</button></div>
-        <!-- ... del 11 al 99 igual, solo cambia el número ... -->
+        <!-- ... del 11 al 99 igual ... -->
         <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">beIN Sports MENA Premium 3 -100</div><button class="btn-canal-action" onclick="changeChannel('100')">VER CANAL</button></div>
+
     </div>
 </div>
 
@@ -77,9 +77,8 @@
 <script>
     function changeChannel(num) {
         document.getElementById('main-player').src = `/api/proxy/stream/stream-${num}.php?disableads=1&no-reload=1&autoplay=1`;
-        const player = document.querySelector('.iframe-container');
-        player.scrollIntoView({ behavior: 'smooth' });
-        setTimeout(() => window.scrollBy(0, -80), 500); // Scroll perfecto para que se vea entero
+        document.querySelector('.iframe-container').scrollIntoView({ behavior: 'smooth' });
+        setTimeout(() => window.scrollBy(0, -80), 400);
     }
 
     function filterChannels() {
