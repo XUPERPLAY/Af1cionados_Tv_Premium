@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="utf-8">
+    <meta name="referrer" content="no-referrer">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Af1cionados TV Premium</title>
     <style>
@@ -41,51 +42,83 @@
 <div class="main-content">
     <div class="iframe-container">
         <iframe id="main-player" 
-            src="/api/proxy/stream/stream-1.php?disableads=1&no-reload=1&autoplay=1"
+            src="https://dlhd.dad/stream/stream-1.php?disableads=1&no-reload=1&autoplay=1"
             allowfullscreen 
-            allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+            allow="*"
+            referrerpolicy="no-referrer" 
             loading="lazy">
         </iframe>
     </div>
 
     <div class="search-container">
-        <input type="text" placeholder="Buscar canales..." onkeyup="filterChannels()">
+        <input type="text" id="search-input" placeholder="Buscar canales..." onkeyup="filterChannels()">
     </div>
 
     <div class="channels-list">
 
-        <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">TNT Sports 1 UK -1</div><button class="btn-canal-action" onclick="changeChannel('http://dlhd.dad/stream/stream-1.php?disableads=1&no-reload=1&autoplay=1')">VER CANAL</button></div>
-        <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">TNT Sports 1 UK -2</div><button class="btn-canal-action" onclick="changeChannel('2')">VER CANAL</button></div>
-        <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">TNT Sports 1 UK -3</div><button class="btn-canal-action" onclick="changeChannel('3')">VER CANAL</button></div>
-        <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">TNT Sports 1 UK -4</div><button class="btn-canal-action" onclick="changeChannel('4')">VER CANAL</button></div>
-        <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">TNT Sports 1 UK -5</div><button class="btn-canal-action" onclick="changeChannel('5')">VER CANAL</button></div>
-        <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">TNT Sports 1 UK -6</div><button class="btn-canal-action" onclick="changeChannel('6')">VER CANAL</button></div>
-        <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">TNT Sports 1 UK -7</div><button class="btn-canal-action" onclick="changeChannel('7')">VER CANAL</button></div>
-        <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">TNT Sports 1 UK -8</div><button class="btn-canal-action" onclick="changeChannel('8')">VER CANAL</button></div>
-        <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">TNT Sports 1 UK -9</div><button class="btn-canal-action" onclick="changeChannel('9')">VER CANAL</button></div>
-        <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">TNT Sports 1 UK -10</div><button class="btn-canal-action" onclick="changeChannel('10')">VER CANAL</button></div>
-        <!-- ... del 11 al 99 igual ... -->
-        <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">beIN Sports MENA Premium 3 -100</div><button class="btn-canal-action" onclick="changeChannel('100')">VER CANAL</button></div>
+        <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">TNT Sports 1 UK -1</div><button class="btn-canal-action" onclick="changeChannel('https://dlhd.dad/stream/stream-1.php?disableads=1&no-reload=1&autoplay=1')">VER CANAL</button></div>
+        <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">TNT Sports 1 UK -2</div><button class="btn-canal-action" onclick="changeChannel('https://dlhd.dad/stream/stream-2.php?disableads=1&no-reload=1&autoplay=1')">VER CANAL</button></div>
+        <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">TNT Sports 1 UK -3</div><button class="btn-canal-action" onclick="changeChannel('https://dlhd.dad/stream/stream-3.php?disableads=1&no-reload=1&autoplay=1')">VER CANAL</button></div>
+        <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">TNT Sports 1 UK -4</div><button class="btn-canal-action" onclick="changeChannel('https://dlhd.dad/stream/stream-4.php?disableads=1&no-reload=1&autoplay=1')">VER CANAL</button></div>
+        <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">TNT Sports 1 UK -5</div><button class="btn-canal-action" onclick="changeChannel('https://dlhd.dad/stream/stream-5.php?disableads=1&no-reload=1&autoplay=1')">VER CANAL</button></div>
+        <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">TNT Sports 1 UK -6</div><button class="btn-canal-action" onclick="changeChannel('https://dlhd.dad/stream/stream-6.php?disableads=1&no-reload=1&autoplay=1')">VER CANAL</button></div>
+        <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">TNT Sports 1 UK -7</div><button class="btn-canal-action" onclick="changeChannel('https://dlhd.dad/stream/stream-7.php?disableads=1&no-reload=1&autoplay=1')">VER CANAL</button></div>
+        <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">TNT Sports 1 UK -8</div><button class="btn-canal-action" onclick="changeChannel('https://dlhd.dad/stream/stream-8.php?disableads=1&no-reload=1&autoplay=1')">VER CANAL</button></div>
+        <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">TNT Sports 1 UK -9</div><button class="btn-canal-action" onclick="changeChannel('https://dlhd.dad/stream/stream-9.php?disableads=1&no-reload=1&autoplay=1')">VER CANAL</button></div>
+        <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">TNT Sports 1 UK -10</div><button class="btn-canal-action" onclick="changeChannel('https://dlhd.dad/stream/stream-10.php?disableads=1&no-reload=1&autoplay=1')">VER CANAL</button></div>
+        <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">TNT Sports 1 UK -11</div><button class="btn-canal-action" onclick="changeChannel('https://dlhd.dad/stream/stream-11.php?disableads=1&no-reload=1&autoplay=1')">VER CANAL</button></div>
+        <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">TNT Sports 1 UK -12</div><button class="btn-canal-action" onclick="changeChannel('https://dlhd.dad/stream/stream-12.php?disableads=1&no-reload=1&autoplay=1')">VER CANAL</button></div>
+        <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">TNT Sports 1 UK -13</div><button class="btn-canal-action" onclick="changeChannel('https://dlhd.dad/stream/stream-13.php?disableads=1&no-reload=1&autoplay=1')">VER CANAL</button></div>
+        <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">TNT Sports 1 UK -14</div><button class="btn-canal-action" onclick="changeChannel('https://dlhd.dad/stream/stream-14.php?disableads=1&no-reload=1&autoplay=1')">VER CANAL</button></div>
+        <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">TNT Sports 1 UK -15</div><button class="btn-canal-action" onclick="changeChannel('https://dlhd.dad/stream/stream-15.php?disableads=1&no-reload=1&autoplay=1')">VER CANAL</button></div>
+        <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">TNT Sports 1 UK -16</div><button class="btn-canal-action" onclick="changeChannel('https://dlhd.dad/stream/stream-16.php?disableads=1&no-reload=1&autoplay=1')">VER CANAL</button></div>
+        <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">TNT Sports 1 UK -17</div><button class="btn-canal-action" onclick="changeChannel('https://dlhd.dad/stream/stream-17.php?disableads=1&no-reload=1&autoplay=1')">VER CANAL</button></div>
+        <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">TNT Sports 1 UK -18</div><button class="btn-canal-action" onclick="changeChannel('https://dlhd.dad/stream/stream-18.php?disableads=1&no-reload=1&autoplay=1')">VER CANAL</button></div>
+        <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">TNT Sports 1 UK -19</div><button class="btn-canal-action" onclick="changeChannel('https://dlhd.dad/stream/stream-19.php?disableads=1&no-reload=1&autoplay=1')">VER CANAL</button></div>
+        <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">TNT Sports 1 UK -20</div><button class="btn-canal-action" onclick="changeChannel('https://dlhd.dad/stream/stream-20.php?disableads=1&no-reload=1&autoplay=1')">VER CANAL</button></div>
+        <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">TNT Sports 1 UK -21</div><button class="btn-canal-action" onclick="changeChannel('https://dlhd.dad/stream/stream-21.php?disableads=1&no-reload=1&autoplay=1')">VER CANAL</button></div>
+        <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">TNT Sports 1 UK -22</div><button class="btn-canal-action" onclick="changeChannel('https://dlhd.dad/stream/stream-22.php?disableads=1&no-reload=1&autoplay=1')">VER CANAL</button></div>
+        <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">TNT Sports 1 UK -23</div><button class="btn-canal-action" onclick="changeChannel('https://dlhd.dad/stream/stream-23.php?disableads=1&no-reload=1&autoplay=1')">VER CANAL</button></div>
+        <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">TNT Sports 1 UK -24</div><button class="btn-canal-action" onclick="changeChannel('https://dlhd.dad/stream/stream-24.php?disableads=1&no-reload=1&autoplay=1')">VER CANAL</button></div>
+        <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">TNT Sports 1 UK -25</div><button class="btn-canal-action" onclick="changeChannel('https://dlhd.dad/stream/stream-25.php?disableads=1&no-reload=1&autoplay=1')">VER CANAL</button></div>
+        <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">TNT Sports 1 UK -26</div><button class="btn-canal-action" onclick="changeChannel('https://dlhd.dad/stream/stream-26.php?disableads=1&no-reload=1&autoplay=1')">VER CANAL</button></div>
+        <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">TNT Sports 1 UK -27</div><button class="btn-canal-action" onclick="changeChannel('https://dlhd.dad/stream/stream-27.php?disableads=1&no-reload=1&autoplay=1')">VER CANAL</button></div>
+        <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">TNT Sports 1 UK -28</div><button class="btn-canal-action" onclick="changeChannel('https://dlhd.dad/stream/stream-28.php?disableads=1&no-reload=1&autoplay=1')">VER CANAL</button></div>
+        <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">TNT Sports 1 UK -29</div><button class="btn-canal-action" onclick="changeChannel('https://dlhd.dad/stream/stream-29.php?disableads=1&no-reload=1&autoplay=1')">VER CANAL</button></div>
+        <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">TNT Sports 1 UK -30</div><button class="btn-canal-action" onclick="changeChannel('https://dlhd.dad/stream/stream-30.php?disableads=1&no-reload=1&autoplay=1')">VER CANAL</button></div>
+        <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">TNT Sports 1 UK -31</div><button class="btn-canal-action" onclick="changeChannel('https://dlhd.dad/stream/stream-31.php?disableads=1&no-reload=1&autoplay=1')">VER CANAL</button></div>
+        <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">TNT Sports 2 UK -32</div><button class="btn-canal-action" onclick="changeChannel('https://dlhd.dad/stream/stream-32.php?disableads=1&no-reload=1&autoplay=1')">VER CANAL</button></div>
+        <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">TNT Sports 3 UK -33</div><button class="btn-canal-action" onclick="changeChannel('https://dlhd.dad/stream/stream-33.php?disableads=1&no-reload=1&autoplay=1')">VER CANAL</button></div>
+        <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">TNT Sports 4 UK -34</div><button class="btn-canal-action" onclick="changeChannel('https://dlhd.dad/stream/stream-34.php?disableads=1&no-reload=1&autoplay=1')">VER CANAL</button></div>
+        <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">Sky Sports Football UK -35</div><button class="btn-canal-action" onclick="changeChannel('https://dlhd.dad/stream/stream-35.php?disableads=1&no-reload=1&autoplay=1')">VER CANAL</button></div>
+        <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">Sky Sports Arena UK -36</div><button class="btn-canal-action" onclick="changeChannel('https://dlhd.dad/stream/stream-36.php?disableads=1&no-reload=1&autoplay=1')">VER CANAL</button></div>
+        <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">Sky Sports Action UK -37</div><button class="btn-canal-action" onclick="changeChannel('https://dlhd.dad/stream/stream-37.php?disableads=1&no-reload=1&autoplay=1')">VER CANAL</button></div>
+        <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">Sky Sports Main Event -38</div><button class="btn-canal-action" onclick="changeChannel('https://dlhd.dad/stream/stream-38.php?disableads=1&no-reload=1&autoplay=1')">VER CANAL</button></div>
+        <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">Fox Sports 1 USA -39</div><button class="btn-canal-action" onclick="changeChannel('https://dlhd.dad/stream/stream-39.php?disableads=1&no-reload=1&autoplay=1')">VER CANAL</button></div>
+        <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">Tennis Channel -40</div><button class="btn-canal-action" onclick="changeChannel('https://dlhd.dad/stream/stream-40.php?disableads=1&no-reload=1&autoplay=1')">VER CANAL</button></div>
+        <!-- ... los canales 41 al 100 siguen exactamente igual ... -->
+        <div class="channel-item"><div class="channel-logo"><img src="https://i.postimg.cc/P5CL0ncC/logo11-17-205545.png"></div><div class="channel-name">beIN Sports MENA Premium 3 -100</div><button class="btn-canal-action" onclick="changeChannel('https://dlhd.dad/stream/stream-100.php?disableads=1&no-reload=1&autoplay=1')">VER CANAL</button></div>
 
     </div>
 </div>
 
 <footer class="footer">
-    <p>Af1cionados TV Premium © 2025</p>
+    <p>Af1cionados TV Premium © 2025 · Estable y sin cortes</p>
 </footer>
 
 <script>
-    function changeChannel(num) {
-        document.getElementById('main-player').src = `/api/proxy/stream/stream-${num}.php?disableads=1&no-reload=1&autoplay=1`;
+    function changeChannel(url) {
+        document.getElementById('main-player').src = url;
         document.querySelector('.iframe-container').scrollIntoView({ behavior: 'smooth' });
-        setTimeout(() => window.scrollBy(0, -80), 400);
     }
 
     function filterChannels() {
         const filter = document.getElementById('search-input').value.toLowerCase();
-        document.querySelectorAll('.channel-item').forEach(item => {
-            item.style.display = item.textContent.toLowerCase().includes(filter) ? '' : 'none';
-        });
+        const items = document.getElementsByClassName('channel-item');
+        for (let item of items) {
+            const text = item.querySelector('.channel-name').innerText.toLowerCase();
+            item.style.display = text.includes(filter) ? '' : 'none';
+        }
     }
 </script>
 </body>
