@@ -1,28 +1,18 @@
 // api/proxy.js
-module.exports = async (req, res) => {
-  const { stream } = req.query;
+export const config = { api: { bodyParser: false } };
 
-  if (!stream) {
-    return res.status(400).json({ error: 'Falta el parámetro stream' });
-  }
+import { createProxyMiddleware } from 'http-proxy-middleware';
 
-  const url = `https://dlhd.dad/stream/stream-${stream}.php`;
-
-  try {
-    const response = await fetch(url);
-    const html = await response.text();
-
-    // Limpiamos el HTML para eliminar anuncios y scripts que causan parones
-    let cleanHtml = html
-      .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
-      .replace(/onload="[^"]*"/gi, '')
-      .replace(/onerror="[^"]*"/gi, '')
-      .replace(/popup/gi, '')
-      .replace(/ads/g, '');
-
-    res.setHeader('Content-Type', 'text/html');
-    res.send(cleanHtml);
-  } catch (error) {
-    res.status(500).send('Error al cargar el canal');
-  }
-};
+export default createProxyMiddleware({
+  target: 'https://dlhd.dad',
+  changeOrigin: true,
+  pathRewrite: {
+    '^/api/proxy': '',
+  },
+  onProxyRes: (proxyRes, req, res) => {
+    // Eliminamos headers que causan problemas
+    delete proxyRes.headers['x-frame-options'];
+    delete proxyRes.headers['content-security-policy'];
+    delete proxyRes.headers['frame-options'];
+  },
+});
