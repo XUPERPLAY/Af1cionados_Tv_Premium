@@ -9,7 +9,11 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": "default-src * 'unsafe-inline' 'unsafe-eval' data: blob:; frame-ancestors *; child-src *"
+          "value": "default-src * 'unsafe-inline' 'unsafe-eval' data: blob: filesystem:; frame-src *; child-src *; worker-src *; media-src *; connect-src *; font-src *; img-src *"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
         }
       ]
     }
