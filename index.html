@@ -112,9 +112,36 @@
 
 <script>
     function changeChannel(url) {
-        document.getElementById('main-player').src = url;
-        document.querySelector('.iframe-container').scrollIntoView({ behavior: 'smooth' });
+    // Transforma la URL original en URL del proxy
+    const proxyUrl = '/api/proxy?url=' + encodeURIComponent(url.replace('https://', ''));
+    
+    // Selecciona el contenedor
+    const container = document.getElementById('player-container');
+    
+    // Elimina iframe anterior si existe
+    const oldIframe = container.querySelector('iframe');
+    if (oldIframe) {
+        oldIframe.remove();
     }
+    
+    // Oculta el texto de carga
+    document.getElementById('loading-text').style.display = 'none';
+    
+    // Crea el iframe dinámicamente
+    const iframe = document.createElement('iframe');
+    iframe.id = 'main-player';
+    iframe.src = proxyUrl; // USA LA URL DEL PROXY
+    iframe.width = '100%';
+    iframe.height = '100%';
+    iframe.style.border = 'none';
+    iframe.style.background = '#000';
+    iframe.setAttribute('allowfullscreen', '');
+    iframe.setAttribute('allow', 'autoplay; fullscreen; encrypted-media; media');
+    iframe.setAttribute('referrerpolicy', 'no-referrer');
+    
+    container.appendChild(iframe);
+    container.scrollIntoView({ behavior: 'smooth' });
+}
 
     function filterChannels() {
         const filter = document.getElementById('search-input').value.toLowerCase();
