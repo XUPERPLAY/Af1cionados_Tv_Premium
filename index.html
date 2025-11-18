@@ -39,20 +39,11 @@
     <div class="header-logo-placeholder"></div>
 </header>
 
-<div class="main-content">
-    <iframe 
-    id="main-player"
-    src="https://dlhd.dad/stream/stream-1.php?disableads=1&no-reload=1&autoplay=1"
-    allowfullscreen 
-    allow="autoplay; fullscreen; encrypted-media *; media *; camera *; microphone *; geolocation *; payment *; midi *"
-    referrerpolicy="no-referrer"
-    width="100%" 
-    height="100%" 
-    frameborder="0"
-    style="border: none; background: #000;"
->
-</iframe>
+<div class="iframe-container" id="player-container">
+    <div id="loading-text" style="display: flex; align-items: center; justify-content: center; height: 100%; color: #00ff00; font-size: 1.5em;">
+        Selecciona un canal
     </div>
+</div>
 
     <div class="search-container">
         <input type="text" id="search-input" placeholder="Buscar canales..." onkeyup="filterChannels()">
